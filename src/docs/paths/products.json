@@ -1,5 +1,47 @@
 {
   "/products": {
+    "get": {
+      "tags": ["Product"],
+      
+      "parameters": [
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "Example ?limit=10"
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "Example ?page=1"
+        },
+        {
+          "name": "sort",
+          "in": "query",
+          "required": false,
+          "description": "Example ?sort=id"
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "Example ?order=ASC"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseResponse"
+              }
+            }
+          }
+        }
+      }
+    },
     "post": {
       "tags": ["Product"],
       "requestBody": {

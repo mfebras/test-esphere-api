@@ -5,6 +5,19 @@ const {
   success,
 } = require('../../utils');
 
+exports.index = async (req, res) => {
+  const {
+    limit,
+    page,
+    sort,
+    order
+  } = req.query;
+
+  const data = await repository.paginate(limit, page, sort, order);
+
+  return success(res, lang('success'), data);
+}
+
 exports.store = async (req, res) => {
   const now = dateFormat();
   const payload = {
