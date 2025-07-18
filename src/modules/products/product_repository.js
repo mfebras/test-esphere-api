@@ -11,4 +11,6 @@ exports.paginate = (limit = 10, page = 1, sort = 'id', order = 'DESC') => {
     .offset(offset);
 }
 
+exports.find = (id) => DB(TABLES.PRODUCT).where('id', id).first();
+
 exports.store = (payload) => DB(TABLES.PRODUCT).insert(payload);

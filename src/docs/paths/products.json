@@ -2,7 +2,6 @@
   "/products": {
     "get": {
       "tags": ["Product"],
-      
       "parameters": [
         {
           "name": "limit",
@@ -54,6 +53,31 @@
         },
         "required": true
       },
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseResponse"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/products/{id}": {
+    "get": {
+      "tags": ["Product"],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": false,
+          "description": "Example ?id=1"
+        }
+      ],
       "responses": {
         "200": {
           "description": "OK",
