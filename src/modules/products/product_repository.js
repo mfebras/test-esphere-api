@@ -16,3 +16,5 @@ exports.find = (id) => DB(TABLES.PRODUCT).where('id', id).first();
 exports.store = (payload) => DB(TABLES.PRODUCT).insert(payload);
 
 exports.update = (id, payload) => DB(TABLES.PRODUCT).where('id', id).update(payload);
+
+exports.destroy = (id) => DB(TABLES.PRODUCT).where('id', id).del();

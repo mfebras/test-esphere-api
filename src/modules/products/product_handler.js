@@ -60,3 +60,15 @@ exports.update = async (req, res) => {
 
   return success(res, lang('success'));
 }
+
+exports.destroy = async (req, res) => {
+  const data = await repository.find(req.params.id);
+
+  if (!data) {
+    return fail(res, lang('not.found'), 404);
+  }
+
+  await repository.destroy(req.params.id);
+
+  return success(res, lang('success'));
+}
