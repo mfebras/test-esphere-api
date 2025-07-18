@@ -1,0 +1,29 @@
+{
+  "/products": {
+    "post": {
+      "tags": ["Product"],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProductStore"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseResponse"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

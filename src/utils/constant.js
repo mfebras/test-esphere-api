@@ -1,5 +1,6 @@
 exports.TABLES = {
-  USER: 'users'
+  USER: 'users',
+  PRODUCT: 'products'
 }
 
 exports.USER_ROLES = {

@@ -1,0 +1,19 @@
+{
+  "ProductStore": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "example": "Asus X21"
+      },
+      "price": {
+        "type": "number",
+        "example": 10000
+      },
+      "stock": {
+        "type": "number",
+        "example": 100
+      }
+    }
+  }
+}
