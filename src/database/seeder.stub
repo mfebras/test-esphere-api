@@ -1,0 +1,16 @@
+const { TABLES } = require('../../utils')
+
+exports.seed = async function(knex) {
+  // Deletes all entries
+  await knex(TABLES.USER).del()
+  await knex.raw(`ALTER TABLE ${TABLES.USER} AUTO_INCREMENT = ?`, 1)
+
+  let data = []
+  for (let i = 0; i < 100; i++) {
+    data.push({
+      key: ''
+    })
+  }
+
+  await knex(TABLES.USER).insert(data)
+}
