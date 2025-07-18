@@ -90,6 +90,39 @@
           }
         }
       }
+    },
+    "put": {
+      "tags": ["Product"],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": false,
+          "description": "Example ?id=1"
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProductStore"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseResponse"
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

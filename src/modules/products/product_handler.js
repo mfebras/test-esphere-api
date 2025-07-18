@@ -42,3 +42,21 @@ exports.store = async (req, res) => {
 
   return success(res, lang('success'));
 }
+
+exports.update = async (req, res) => {
+  const data = await repository.find(req.params.id);
+
+  if (!data) {
+    return fail(res, lang('not.found'), 404);
+  }
+
+  const payload = {
+    name: req.body.name,
+    price: req.body.price,
+    stock: req.body.stock,
+    updated_at: dateFormat(),
+  };
+  await repository.update(req.params.id, payload);
+
+  return success(res, lang('success'));
+}
